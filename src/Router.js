@@ -3,7 +3,6 @@ import {BrowserRouter, Route} from "react-router-dom";
 import Landing from "./Pages/Landing"
 import Particles from "react-particles-js";
 
-
 class Router extends Component {
   render() {
     return (
