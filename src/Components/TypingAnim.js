@@ -1,6 +1,5 @@
 import React from 'react'
-import styled, { keyframes } from "styled-components";
-
+import styled, { keyframes } from 'styled-components'
 
 const TypeWriter = props => {
   return (
@@ -10,18 +9,18 @@ const TypeWriter = props => {
   )
 }
 
-export default TypeWriter;
+export default TypeWriter
 
-//<=== Styling the TypeWriter effect and Cursor===>//
+// <=== Styling the TypeWriter effect and Cursor===>//
 const TypingEffect = keyframes`
   from { width: 0 };
   to { width: 100% };
-`;
+`
 
 const BlinkerEffect = keyframes`
   from, to { border-color: transparent }
   50% { border-color: #4EB1BA }
-`;
+`
 
 const TypeToScreen = styled.div`
   display: flex;
@@ -37,4 +36,4 @@ const TypeToScreen = styled.div`
     ${TypingEffect} 2s steps(20, end),
     ${BlinkerEffect} 0.6s step-end infinite;
   }
-`;
+`

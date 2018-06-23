@@ -1,18 +1,17 @@
-import React from "react";
-import styled from "styled-components";
-import TypeWriter from "./TypingAnim";
-import LinksBar from "./LinksBar";
+import React from 'react'
+import styled from 'styled-components'
+import TypeWriter from './TypingAnim'
+// import LinksBar from "./LinksBar";
 
 const TextGreet = props => {
   return (
     <Greeting>
-      <TypeWriter/>
-      <LinksBar/>
+      <TypeWriter />
     </Greeting>
-  );
-};
+  )
+}
 
-//<=== Styling Greeting component ===>//
+// <=== Styling Greeting component ===>//
 const Greeting = styled.div`
   position: absolute;
   top: 20vh;
@@ -39,5 +38,5 @@ const Greeting = styled.div`
     top: 2vh;
     font-size: 1.5rem;
   }
-`;
-export default TextGreet;
+`
+export default TextGreet

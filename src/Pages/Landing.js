@@ -1,15 +1,29 @@
 import React, { Component } from 'react'
-import { Wrapper } from '../Styles';
-import TextGreet from "../Components/index";
+import styled from 'styled-components'
+import { ParticlesJS } from '../Particles'
 
 class Landing extends Component {
-  render() {
+  render () {
     return (
-        <Wrapper>
-          <TextGreet/>
-        </Wrapper>
-    );
+      <Wrapper>
+        <ParticlesJS />
+        <Greeting />
+      </Wrapper>
+    )
   }
 }
+const [bgColor, fontColor, particleColor] = ['#222930', '#E9E9E9', '#4EB1BA']
 
-export default Landing;
+const Wrapper = styled.div`
+  height: 100vh;
+  width: 100vw;
+  background: ${bgColor};
+  color: ${fontColor};
+  z-index: 0;
+  position: relative;
+`
+const Greeting = styled.div`
+  
+`
+
+export default Landing
