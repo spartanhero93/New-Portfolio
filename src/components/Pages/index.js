@@ -61,7 +61,7 @@ const topics = [
   }
 ]
 
-function Resource ({ match }) {
+const Resource = ({ match }) => {
   const topic = topics
     .find(({ id }) => id === match.params.topicId)
     .resources.find(({ id }) => id === match.params.subId)
@@ -75,7 +75,7 @@ function Resource ({ match }) {
   )
 }
 
-function Topic ({ match }) {
+const Topic = ({ match }) => {
   const topic = topics.find(({ id }) => id === match.params.topicId)
 
   return (
@@ -98,7 +98,7 @@ function Topic ({ match }) {
   )
 }
 
-function Topics ({ match }) {
+const Topics = ({ match }) => {
   return (
     <div>
       <h1>Topics</h1>
@@ -117,7 +117,7 @@ function Topics ({ match }) {
   )
 }
 
-function Home () {
+const Home = () => {
   return (
     <h1>
       Home.

@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 import Particles from 'react-particles-js'
-
-const primary = '#4EB1BA'
-const secondary = '#222930'
-const fontColor = '#E9E9E9'
+import { fontColor, secondary } from './styles/variables'
 
 class Particles2 extends Component {
   render () {
