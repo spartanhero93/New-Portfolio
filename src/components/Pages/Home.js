@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import styled, { injectGlobal } from 'styled-components'
+import styled from 'styled-components'
+import Navbar from '../Navbar'
 
 import { primary, fontColor } from '../../styles/variables'
 
@@ -10,6 +11,12 @@ class Home extends Component {
         <h4>Luis Lopez</h4>
         <br />
         <h2>Web Developer</h2>
+
+        <br />
+        <br />
+        <br />
+        <br />
+        <Navbar />
       </Wrapper>
     )
   }

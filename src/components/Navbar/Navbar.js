@@ -1,10 +1,19 @@
 import React, { Component } from 'react'
+import styled from 'styled-components'
+import { Link } from 'react-router-dom'
 
-class Navbar extends Component {
-  render () {
-    return <div>Hello World</div>
-  }
-}
+const Navbar = () => (
+  <ul>
+    <NavLink to='/'>Home</NavLink>
+    <NavLink to='/work'>Work</NavLink>
+  </ul>
+)
+
+const NavLink = props => (
+  <li>
+    <Link {...props} />
+  </li>
+)
 
 /* Styles */
 

@@ -1,5 +1,12 @@
 import React, { Component } from 'react'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { TransitionGroup, CSSTransition } from 'react-transition-group'
+import { fadeInUp } from 'react-animations'
+
+import Home from './Home'
+import Work from './Work'
+import Navbar from '../Navbar'
+import './transitions.css'
 
 const topics = [
   {
@@ -117,32 +124,26 @@ const Topics = ({ match }) => {
   )
 }
 
-const Home = () => {
-  return (
-    <h1>
-      Home.
-    </h1>
-  )
-}
-
-class MainRouter extends Component {
-  render () {
-    return (
-      <Router>
+const MainRouter = () => (
+  <Router>
+    <Route
+      render={({ location }) => (
         <div style={{ width: 1000, margin: '0 auto' }}>
-          <ul>
-            <li><Link to='/'>Home</Link></li>
-            <li><Link to='/topics'>Topics</Link></li>
-          </ul>
-
-          <hr />
-
-          <Route exact path='/' component={Home} />
-          <Route path='/topics' component={Topics} />
+          <div>
+            <TransitionGroup>
+              <CSSTransition key={location.key} classNames='fade' timeout={100}>
+                <Switch location={location}>
+                  <Route exact path='/' component={Home} />
+                  <Route path='/work' component={Work} />
+                  <Route render={() => <div>Not Found</div>} />
+                </Switch>
+              </CSSTransition>
+            </TransitionGroup>
+          </div>
         </div>
-      </Router>
-    )
-  }
-}
+      )}
+    />
+  </Router>
+)
 
 export default MainRouter
