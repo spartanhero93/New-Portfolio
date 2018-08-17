@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import styled from 'styled-components'
-import Navbar from '../Navbar'
+// import Typist from 'react-typist'
 
+import Navbar from '../Navbar'
 import { primary, fontColor } from '../../styles/variables'
 
 class Home extends Component {
@@ -9,13 +10,7 @@ class Home extends Component {
     return (
       <Wrapper>
         <h4>Luis Lopez</h4>
-        <br />
         <h2>Web Developer</h2>
-
-        <br />
-        <br />
-        <br />
-        <br />
         <Navbar />
       </Wrapper>
     )
@@ -27,9 +22,11 @@ const Wrapper = styled.div`
   color: ${fontColor};
   font-size: 3rem;
   position: absolute;
-  top: 30%;
+  top: 26%;
   left: 41%;
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
 
   * {
     margin: 0;
@@ -41,8 +38,27 @@ const Wrapper = styled.div`
   h2 {
     margin-top: 1rem;
     color: ${primary};
+    margin-bottom: 8rem;
   }
-  
+
+  @media(max-width: 1600px) {
+    left: 32%;
+  }
+  @media(max-width: 1300px) {
+    left: 30%;
+  }
+  @media(max-width: 1000px) {
+    left: 24%;
+    * {
+      font-size: 2.3rem;
+    }
+    h2 {
+      margin-bottom: 4rem;
+    }
+  }
+  @media(max-width: 800px) {
+    left: 12%;
+  }
 `
 
 export default Home
