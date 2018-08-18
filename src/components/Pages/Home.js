@@ -48,7 +48,7 @@ const Wrapper = styled.div`
     left: 30%;
   }
   @media(max-width: 1000px) {
-    left: 24%;
+    left: 26%;
     * {
       font-size: 2.3rem;
     }

@@ -26,7 +26,6 @@ const Wrapper = styled.nav`
     margin: 0 2rem;
     position: relative;
     overflow: hidden;
-    position: relative;
     padding: 1rem 2rem;
     border-radius: 1rem;
 
