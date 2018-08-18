@@ -57,7 +57,7 @@ const Wrapper = styled.div`
     }
   }
   @media(max-width: 800px) {
-    left: 12%;
+    left: 17%;
   }
 `
 

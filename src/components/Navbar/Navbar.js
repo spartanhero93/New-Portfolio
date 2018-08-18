@@ -54,6 +54,7 @@ const Wrapper = styled.nav`
     @media(max-width: 800px) {
       font-size: 1.4rem;
       margin: 0 .5rem;
+      padding: .5rem 1rem;
     } 
   }
 `
