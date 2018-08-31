@@ -1,0 +1,8 @@
+export { default as baconImg } from './bacon.jpg'
+export { default as movieImg } from './movieapp.jpg'
+export { default as ogPortfolioImg } from './og-portfolio.jpg'
+export { default as photowallImg } from './photowall.jpg'
+export { default as pixabayImg } from './pixabay.jpg'
+export { default as quoteMachineImg } from './quotemachine.jpg'
+export { default as wikiAppImg } from './wikiapp.jpg'
+export { default as yourSpaceImg } from './yourspace.jpg'

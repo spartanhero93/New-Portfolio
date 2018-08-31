@@ -3,9 +3,9 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 import { HamburgerButton } from 'react-hamburger-button'
 
-import { primary } from '../../styles/variables'
+import { primary, fontColor } from '../../styleVariables'
 
-class Hamburger extends Component {
+class Sidebar extends Component {
   state = {
     open: false
   }
@@ -33,7 +33,7 @@ class Hamburger extends Component {
             ×
           </span>
           <Link to='/'>Home</Link>
-          <Link to='#'>About</Link>
+          <Link to='/about'>About</Link>
           <Link to='/contact'>Contact</Link>
           <Link to='/work'>Work</Link>
         </NavContainer>
@@ -64,6 +64,7 @@ const NavContainer = styled.nav`
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.4s ease-out; /* 0.5 second transition effect to slide in the sidenav */
   text-align: left;
+  border-radius: 0 3rem 3rem 0;
   a {
     padding: 8px 8px 8px 32px;
     text-decoration: none;
@@ -73,6 +74,7 @@ const NavContainer = styled.nav`
     transition: 0.3s;
     position: relative;
     overflow: hidden;
+    margin: 2rem 0;
 
     :hover {
       color: #f1f1f1;
@@ -106,7 +108,8 @@ const NavContainer = styled.nav`
     font-size: 36px;
     margin-left: 50px;
     cursor: pointer;
+    color: ${fontColor};
   }
 `
 
-export default Hamburger
+export default Sidebar

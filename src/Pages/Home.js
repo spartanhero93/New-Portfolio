@@ -2,17 +2,22 @@ import React, { Component } from 'react'
 import styled from 'styled-components'
 // import Typist from 'react-typist'
 
-import Navbar from '../Navbar'
-import { primary, fontColor } from '../../styles/variables'
+import Navbar from '../components/Navbar'
+import Hamburger from '../components/Sidebar'
+import { primary, fontColor } from '../styleVariables'
 
 class Home extends Component {
   render () {
     return (
-      <Wrapper>
-        <h4>Luis Lopez</h4>
-        <h2>Web Developer</h2>
-        <Navbar />
-      </Wrapper>
+      <React.Fragment>
+        <Hamburger />
+        <Wrapper>
+          <h4>Luis Lopez</h4>
+          <h2>Web Developer</h2>
+          <p>Building websites for Charlotte, N.C</p>
+          <Navbar />
+        </Wrapper>
+      </React.Fragment>
     )
   }
 }
@@ -22,8 +27,9 @@ const Wrapper = styled.div`
   color: ${fontColor};
   font-size: 3rem;
   position: absolute;
-  top: 26%;
-  left: 41%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
   flex-direction: column;
@@ -36,28 +42,27 @@ const Wrapper = styled.div`
   }
 
   h2 {
-    margin-top: 1rem;
+    margin: 2rem;
     color: ${primary};
+  }
+  p {
+    font-size: 1rem;
     margin-bottom: 8rem;
   }
 
   @media(max-width: 1600px) {
-    left: 32%;
   }
   @media(max-width: 1300px) {
-    left: 30%;
   }
   @media(max-width: 1000px) {
-    left: 26%;
     * {
       font-size: 2.3rem;
     }
-    h2 {
+    p {
       margin-bottom: 4rem;
     }
   }
   @media(max-width: 800px) {
-    left: 17%;
   }
 `
 

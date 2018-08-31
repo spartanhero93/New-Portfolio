@@ -2,15 +2,15 @@ import React from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-import { primary, fontColor } from '../../styles/variables'
+import { primary, fontColor } from '../../styleVariables'
 
 const Navbar = () => (
   <Wrapper>
+    <NavLink to='/about'>
+      Skills
+    </NavLink>
     <NavLink to='/work'>
       Work
-    </NavLink>
-    <NavLink to='/contact'>
-      Contact
     </NavLink>
   </Wrapper>
 )
@@ -26,8 +26,8 @@ const Wrapper = styled.nav`
     margin: 0 2rem;
     position: relative;
     overflow: hidden;
-    padding: 1rem 2rem;
-    border-radius: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
 
     &:before {
       content: "";
@@ -50,7 +50,7 @@ const Wrapper = styled.nav`
       transform: scaleX(1);
     }
 
-    @media(max-width: 800px) {
+    @media(max-width: 900px) {
       font-size: 1.4rem;
       margin: 0 .5rem;
       padding: .5rem 1rem;
