@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { fontColor } from '../styleVariables'
+import { fontColor } from '../../styleVariables'
 import Hamburger from '../../components/Sidebar'
 import WorkGrid from '../../components/WorkGrid'
 

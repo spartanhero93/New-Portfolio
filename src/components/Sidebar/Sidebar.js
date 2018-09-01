@@ -29,7 +29,7 @@ class Sidebar extends Component {
           />
         </HamburgerContainer>
         <NavContainer isOpen={this.state.open}>
-          <span isOpen={this.state.open} onClick={this.handleClick}>
+          <span onClick={this.handleClick}>
             ×
           </span>
           <Link to='/'>Home</Link>
@@ -77,7 +77,7 @@ const NavContainer = styled.nav`
     margin: 2rem 0;
 
     :hover {
-      color: #f1f1f1;
+    color: ${fontColor};
     }
     :before {
       content: "";
@@ -101,7 +101,6 @@ const NavContainer = styled.nav`
     }
   }
   span {
-    display: ${props => (props.isOpen ? `visible` : `none`)};
     position: absolute;
     top: 0;
     right: 25px;

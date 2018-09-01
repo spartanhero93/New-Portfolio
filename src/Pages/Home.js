@@ -3,14 +3,14 @@ import styled from 'styled-components'
 // import Typist from 'react-typist'
 
 import Navbar from '../components/Navbar'
-import Hamburger from '../components/Sidebar'
+import Sidebar from '../components/Sidebar'
 import { primary, fontColor } from '../styleVariables'
 
 class Home extends Component {
   render () {
     return (
       <React.Fragment>
-        <Hamburger />
+        <Sidebar />
         <Wrapper>
           <h4>Luis Lopez</h4>
           <h2>Web Developer</h2>

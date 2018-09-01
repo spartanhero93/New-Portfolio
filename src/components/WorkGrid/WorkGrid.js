@@ -1,114 +1,87 @@
 import React, { Component } from 'react'
 import styled, { keyframes } from 'styled-components'
-import {
-  baconImg,
-  movieImg,
-  ogPortfolioImg,
-  photowallImg,
-  pixabayImg,
-  quoteMachineImg,
-  wikiAppImg,
-  yourSpaceImg
-} from '../../images'
-import { fontColor } from '../../styleVariables'
+import { fadeOut, fadeIn } from 'react-animations'
 
-const imagesArr = [
-  baconImg,
-  movieImg,
-  ogPortfolioImg,
-  photowallImg,
-  pixabayImg,
-  quoteMachineImg,
-  wikiAppImg,
-  yourSpaceImg
-]
-
+import { fontColor, primary } from '../../styleVariables'
+import Cards from './Cards'
 class WorkGrid extends Component {
-  state = {
-    hoveredImage: 'false'
-  }
-
-  handleMouseOver = () => {
-    this.setState({ hoveredImage: 'true' })
-  }
-
-  handleMouseLeave = () => {
-    this.setState({ hoveredImage: 'false' })
-  }
-
   render () {
     return (
       <Wrapper>
+        <StyledContainer>
+          <h1>My Work</h1>
+          <p>A collection of projects that I have made</p>
+        </StyledContainer>
         <header>
-          A couple of projects I made
+          Search for my projects
+          <div>
+            <StyledButtons>Front End</StyledButtons>
+            <StyledButtons>Back End</StyledButtons>
+            <StyledButtons>All</StyledButtons>
+          </div>
         </header>
-
-        <Link href='#'>
-          <Icon viewBox='0 0 20 20'>
-            <path d='M10 15h8c1 0 2-1 2-2V3c0-1-1-2-2-2H2C1 1 0 2 0 3v10c0 1 1 2 2 2h4v4l4-4zM5 7h2v2H5V7zm4 0h2v2H9V7zm4 0h2v2h-2V7z' />
-          </Icon>
-          <Label>Hovering my parent changes my style!</Label>
-        </Link>
       </Wrapper>
     )
   }
 }
 
 // <=== Styling ===>//
-/* Keyframe animation */
-const fadeOutAnimation = keyframes`
-  0% { 
-    opacity: 1;
-  }
-  100% { 
-    opacity: 0;
-  }
-`
+const FadeOutAnim = keyframes`${fadeOut}`
+const FadeInAnim = keyframes`${fadeIn}`
 
 const Wrapper = styled.div`
-  text-align:center;
   color: ${fontColor};
-  font-size: 1rem;
-  display: flex;
-  justify-content: space-around;
+  text-align: center;
+  color: ${fontColor};
+  font-weight: 200;
+  font-size: 2rem;
   header {
     position: absolute;
-    top: 50%;
+    top: 20%;
     left: 50%;
-
     transform: translate(-50%, -50%);
-    display: inline;
-    animation:${fadeOutAnimation} 2s ease-in;
-    opacity: 0;
+    opacity: 1;
+    animation:${FadeInAnim} 2s ease-out;
+    display: flex;
+    flex-direction: column;
+  }
+
+  @media(max-width: 900px) {
+    font-size: 1rem;
   }
 `
-
-const Link = styled.a`
-  display: flex;
-  align-items: center;
-  padding: 5px 10px;
-  background: papayawhip;
-  color: palevioletred;
-`
-
-const Icon = styled.svg`
-  transition: fill 0.25s;
-  width: 48px;
-  height: 48px;
-
-  ${Link}:hover & {
-    opacity: rebeccapurple;
+const StyledContainer = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  animation: ${FadeOutAnim} 2s ease-in;
+  * {
+    line-height: 4rem;
   }
 `
-const Label = styled.span`
-  display: flex;
-  align-items: center;
-  line-height: 1.2;
-
-  &::before {
-    content: '◀';
-    margin: 0 10px;
+const StyledButtons = styled.a`
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  width: 16rem;
+  border: 0.1em solid #FFFFFF;
+  margin: 0 0.3em 0.3rem 0;
+  border-radius: 0.12rem;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-weight: 300;
+  color: #FFFFFF;
+  text-align: center;
+  transition: all 0.2s;
+  :hover {
+    color:#000000;
+    background-color:#FFFFFF;
   }
+  @media(max-width: 1000px) {
+    width: 8rem;
+  }
+
 `
 
 export default WorkGrid
